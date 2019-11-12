@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders component 1`] = `
+<Fragment>
+  <Nav />
+  <csx__PageWrapper>
+    <csx__Page>
+      <Connect(ProductContainer) />
+    </csx__Page>
+  </csx__PageWrapper>
+</Fragment>
+`;

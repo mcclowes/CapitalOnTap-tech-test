@@ -1,14 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Text } from "../UIKit";
+import { Text, Button } from "../UIKit";
+import { ProductWrapper, ProductInformation } from "./csx";
 
 const Product = props => {
-  const { product } = props;
+  const { addProductToBasket, product } = props;
 
   const {
     author,
     description,
-    id,
     isbn,
     price,
     stockAmount,
@@ -16,24 +16,36 @@ const Product = props => {
     title
   } = product;
 
+  const outOfStock = stockAmount <= 0;
+
   return (
-    <div>
+    <ProductWrapper>
       <img src={thumbnail} />
-      {/* <div>{author}</div> */}
-      <div>
+
+      <ProductInformation>
         <Text.Header>{title}</Text.Header>
+
+        <Text>
+          {author.firstName} {author.lastName}
+        </Text>
 
         <Text>{description}</Text>
 
-        <Text>{id}</Text>
+        <Text>ISBN: {isbn}</Text>
 
-        <Text>{isbn}</Text>
+        <Text>£{price.toFixed(2)}</Text>
 
-        <Text>{price}</Text>
+        {outOfStock ? (
+          <Text>Out of stock</Text>
+        ) : (
+          <Text>{stockAmount} left in stock</Text>
+        )}
 
-        <Text>{stockAmount}</Text>
-      </div>
-    </div>
+        <Button disabled={outOfStock} doClick={addProductToBasket}>
+          Add to basket
+        </Button>
+      </ProductInformation>
+    </ProductWrapper>
   );
 };
 

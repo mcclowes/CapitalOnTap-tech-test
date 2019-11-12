@@ -1,16 +1,24 @@
 import React from "react";
-import { NavWrapper, NavLink } from "./csx";
+import { NavWrapper, NavLinks, NavLink, Logo } from "./csx";
 
 const Nav = () => {
+  const activePage = window.location.pathname;
+
   return (
     <NavWrapper>
-      <NavLink to="/" data-active={window.location.pathname === "/"}>
-        Books
-      </NavLink>
+      <Logo to="/" data-active={activePage === "/"}>
+        Books On Tap
+      </Logo>
 
-      <NavLink to="/about" data-active={window.location.pathname === "/about"}>
-        About
-      </NavLink>
+      <NavLinks>
+        <NavLink to="/" data-active={activePage === "/"}>
+          Books
+        </NavLink>
+
+        <NavLink to="/about" data-active={activePage === "/about"}>
+          About
+        </NavLink>
+      </NavLinks>
 
       {/* basket goes here */}
     </NavWrapper>

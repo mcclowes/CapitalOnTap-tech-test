@@ -6,11 +6,25 @@ export const NavLink = styled(Link)`
     props["data-active"] === true ? "border-bottom: 1px solid white;" : ""};
 `;
 
+export const Logo = styled(Link)`
+  text-transform: uppercase;
+`;
+
+export const NavLinks = styled.div`
+  display: flex;
+  flex-direction: row;
+`;
+
 export const NavWrapper = styled.div`
   position: absolute;
   padding: 1em 2em;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
 
-  ${NavLink} {
+  ${NavLink},
+  ${Logo} {
     color: white;
     text-decoration: none;
 

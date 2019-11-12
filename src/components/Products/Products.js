@@ -1,5 +1,5 @@
 import React from "react";
-import Product from "../Product";
+import ProductExcerpt from "../ProductExcerpt";
 
 const Products = props => {
   const { products } = props;
@@ -7,7 +7,7 @@ const Products = props => {
   return (
     <div>
       {products.map((product, i) => (
-        <Product key={i} product={product} />
+        <ProductExcerpt key={i} product={product} />
       ))}
     </div>
   );
