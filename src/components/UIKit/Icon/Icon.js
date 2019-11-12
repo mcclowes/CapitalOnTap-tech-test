@@ -1,4 +1,4 @@
-import icons from "./icons";
+import Icons from "./Icons";
 import PropTypes from "prop-types";
 import React from "react";
 import { IconWrapper } from "./csx";
@@ -13,7 +13,7 @@ const Icon = props => {
       width={width}
       height={height}
     >
-      {icon ? <path d={icons[icon]} /> : <path d={path} />}
+      {icon ? <path d={Icons[icon]} /> : <path d={path} />}
     </IconWrapper>
   );
 };
@@ -27,4 +27,4 @@ Icon.propTypes = {
 
 export default Icon;
 
-export { icons };
+export { Icons };

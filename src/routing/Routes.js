@@ -1,14 +1,14 @@
-import Alt from "../views/Alt";
-import Main from "../views/Main";
+import About from "../views/About";
+import Books from "../views/Books";
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 const Routes = () => {
   return (
     <Router>
-      <Route exact path="/" component={Main} />
+      <Route exact path="/" component={Books} />
 
-      <Route path="/alt" component={Alt} />
+      <Route path="/about" component={About} />
     </Router>
   );
 };
