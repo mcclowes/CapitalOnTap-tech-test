@@ -16,4 +16,6 @@ const store = createStore(
   composeWithDevTools(applyMiddleware(...middleware))
 );
 
+store.dispatch(products.getAllProducts());
+
 export default store;

@@ -3,12 +3,12 @@ import Books from "../views/Books";
 import React from "react";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
-const Routes = () => {
+const Routes = props => {
   return (
     <Router>
-      <Route exact path="/" component={Books} />
+      <Route exact path="/" component={Books} {...props} />
 
-      <Route path="/about" component={About} />
+      <Route path="/about" component={About} {...props} />
     </Router>
   );
 };

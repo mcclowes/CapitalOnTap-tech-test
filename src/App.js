@@ -5,7 +5,8 @@ import Routes from "./routing/Routes";
 import theme from "./theme";
 import { ThemeProvider } from "styled-components/macro";
 
-const App = () => {
+const App = props => {
+  console.log("props", props);
   return (
     <div className="App">
       <GlobalStyle />

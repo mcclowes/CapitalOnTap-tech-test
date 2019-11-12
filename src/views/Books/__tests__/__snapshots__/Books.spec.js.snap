@@ -5,7 +5,7 @@ exports[`renders component 1`] = `
   <Nav />
   <csx__PageWrapper>
     <csx__Page>
-      <ProductsContainer />
+      <Connect(ProductsContainer) />
     </csx__Page>
   </csx__PageWrapper>
 </Fragment>

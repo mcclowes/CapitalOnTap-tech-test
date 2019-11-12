@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Products from "./Products";
 import { Loader } from "../../components/UIKit";
+import { getVisibleProducts } from "../../store/reducers/products";
+import { connect } from "react-redux";
 
 const ProductsContainer = props => {
-  // an exammple of a useful hook and loading state
-  const [loading, setloading] = useState(false);
+  const { products } = props;
 
-  return loading ? <Loader /> : <Products {...props} />;
+  return products.length ? <Products products={products} /> : <Loader />;
 };
 
-export default ProductsContainer;
+const mapStateToProps = state => ({
+  products: getVisibleProducts(state.products)
+});
+
+export default connect(mapStateToProps)(ProductsContainer);
