@@ -6,7 +6,6 @@ import theme from "./theme";
 import { ThemeProvider } from "styled-components/macro";
 
 const App = props => {
-  console.log("props", props);
   return (
     <div className="App">
       <GlobalStyle />
